@@ -13,11 +13,11 @@ class Particle {
     this.x = x;
     this.y = y;
     this.size = Math.random() * 3 + 1; // Small dots
-    
+
     // Explode out from point of contact
     this.speedX = Math.random() * 8 - 4;
     this.speedY = Math.random() * 8 - 4;
-    
+
     // Google Antigravity colors: blue, yellow, red
     const colors = ["#4285F4", "#FBBC05", "#EA4335"];
     this.color = colors[Math.floor(Math.random() * colors.length)];
@@ -28,15 +28,15 @@ class Particle {
     // Smooth friction to slow down the initial burst
     this.speedX *= 0.92;
     this.speedY *= 0.92;
-    
+
     // Slowly float downwards (gentle gravity)
     this.speedY += 0.08;
 
     this.x += this.speedX;
     this.y += this.speedY;
-    
+
     // Fade out gracefully over a second or two
-    this.life -= 0.012; 
+    this.life -= 0.012;
     if (this.size > 0.1) this.size -= 0.02; // shrink slowly
   }
 
@@ -59,7 +59,7 @@ export function ParticleBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particlesArray: Particle[] = [];
+    const particlesArray: Particle[] = [];
     let animationFrameId: number;
 
     const resize = () => {
@@ -91,20 +91,20 @@ export function ParticleBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
         particlesArray[i].draw(ctx);
-        
+
         if (particlesArray[i].life <= 0 || particlesArray[i].size <= 0.2) {
           particlesArray.splice(i, 1);
           i--;
         }
       }
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
-    
+
     animate();
 
     return () => {

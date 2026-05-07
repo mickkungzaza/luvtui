@@ -13,11 +13,11 @@ class Particle {
     this.x = x;
     this.y = y;
     this.size = Math.random() * 3 + 2; // Small dots
-    
+
     // Smooth spread when spawning
     this.speedX = Math.random() * 6 - 3;
     this.speedY = Math.random() * 6 - 3;
-    
+
     // Google Antigravity colors: Blue, Red, Yellow, Green
     const colors = ["#4285F4", "#EA4335", "#FBBC05", "#34A853"];
     this.color = colors[Math.floor(Math.random() * colors.length)];
@@ -28,15 +28,15 @@ class Particle {
     // Friction
     this.speedX *= 0.95;
     this.speedY *= 0.95;
-    
+
     // Slight gravity
     this.speedY += 0.1;
 
     this.x += this.speedX;
     this.y += this.speedY;
-    
+
     // Fade out
-    this.life -= 0.015; 
+    this.life -= 0.015;
     if (this.size > 0.2) this.size -= 0.03;
   }
 
@@ -59,7 +59,7 @@ export function CursorParticles() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particlesArray: Particle[] = [];
+    const particlesArray: Particle[] = [];
     let animationFrameId: number;
 
     const resize = () => {
@@ -91,20 +91,20 @@ export function CursorParticles() {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
         particlesArray[i].draw(ctx);
-        
+
         if (particlesArray[i].life <= 0 || particlesArray[i].size <= 0.2) {
           particlesArray.splice(i, 1);
           i--;
         }
       }
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
-    
+
     animate();
 
     return () => {

@@ -30,17 +30,37 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "เข้ามาจิๆ" },
-      { name: "description", content: "A mobile-first web app for birthday surprises, featuring an interactive letter opening and reading experience." },
+      {
+        name: "description",
+        content:
+          "A mobile-first web app for birthday surprises, featuring an interactive letter opening and reading experience.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "เข้ามาจิๆ" },
-      { property: "og:description", content: "A mobile-first web app for birthday surprises, featuring an interactive letter opening and reading experience." },
+      {
+        property: "og:description",
+        content:
+          "A mobile-first web app for birthday surprises, featuring an interactive letter opening and reading experience.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "เข้ามาจิๆ" },
-      { name: "twitter:description", content: "A mobile-first web app for birthday surprises, featuring an interactive letter opening and reading experience." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/da7dbfa1-4544-4b44-9c2d-a9eec48ad1d9/id-preview-1e59020f--20855295-d714-44b6-bacf-3717182deee1.lovable.app-1777906529222.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/da7dbfa1-4544-4b44-9c2d-a9eec48ad1d9/id-preview-1e59020f--20855295-d714-44b6-bacf-3717182deee1.lovable.app-1777906529222.png" },
+      {
+        name: "twitter:description",
+        content:
+          "A mobile-first web app for birthday surprises, featuring an interactive letter opening and reading experience.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/da7dbfa1-4544-4b44-9c2d-a9eec48ad1d9/id-preview-1e59020f--20855295-d714-44b6-bacf-3717182deee1.lovable.app-1777906529222.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/da7dbfa1-4544-4b44-9c2d-a9eec48ad1d9/id-preview-1e59020f--20855295-d714-44b6-bacf-3717182deee1.lovable.app-1777906529222.png",
+      },
     ],
     links: [
       {

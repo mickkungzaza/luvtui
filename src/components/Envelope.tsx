@@ -14,11 +14,16 @@ export function Envelope({ opened, onOpen }: Props) {
         style={{ perspective: "1000px" }}
       >
         {/* envelope body */}
-        <div className="absolute inset-0 rounded-lg shadow-2xl"
-          style={{ background: "linear-gradient(135deg, oklch(0.92 0.06 25), oklch(0.86 0.09 30))" }}
+        <div
+          className="absolute inset-0 rounded-lg shadow-2xl"
+          style={{
+            background: "linear-gradient(135deg, oklch(0.92 0.06 25), oklch(0.86 0.09 30))",
+          }}
         />
         {/* letter peeking */}
-        <div className={`absolute left-3 right-3 top-3 bottom-3 rounded-md bg-card transition-all duration-700 ${opened ? "animate-letter-rise" : ""}`}>
+        <div
+          className={`absolute left-3 right-3 top-3 bottom-3 rounded-md bg-card transition-all duration-700 ${opened ? "animate-letter-rise" : ""}`}
+        >
           <div className="flex items-center justify-center h-full">
             <span className="font-script text-3xl sm:text-4xl text-primary">♡</span>
           </div>
@@ -36,8 +41,13 @@ export function Envelope({ opened, onOpen }: Props) {
         />
         {/* wax seal */}
         {!opened && (
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10"
-            style={{ background: "radial-gradient(circle at 30% 30%, oklch(0.65 0.2 25), oklch(0.45 0.18 22))" }}>
+          <div
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10"
+            style={{
+              background:
+                "radial-gradient(circle at 30% 30%, oklch(0.65 0.2 25), oklch(0.45 0.18 22))",
+            }}
+          >
             <span className="font-script text-primary-foreground text-xl">♥</span>
           </div>
         )}
